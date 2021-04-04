@@ -1,0 +1,9 @@
+# the nginx server instance
+server {
+    server_name basiliski.fi www.basiliski.fi;
+
+    # pass the request to the node.js server with the correct headers
+    # and much more can be added, see nginx config options
+    location / {
+      proxy_pass http://localhost:3000/;
+    }
